@@ -123,6 +123,14 @@
         #main {
             height: 2000px;
         }
+        .blind {
+            position: absolute;
+            clip: react(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
     </style>
 </head>
 <body>
@@ -131,6 +139,7 @@
             <div id="header">
                 <button id="header-hamburger">
                     <div></div>
+                    <span class="blind">확장 영역</span>
                 </button>
             </div>
             <div id="search"></div>
