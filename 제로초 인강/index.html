@@ -190,12 +190,13 @@
             </div>
             <style>
                 #search > form {
-                    display: inline-block;
+                    display: inline-flex;
                     width: 788px;
                     height: 60px;
                     border: 1px solid #03c75a;
                     border-radius: 33px;
                     text-align: left;
+                    justify-content: space-between;
                 }
                 #search > form > input {
                     width: 480px;
@@ -206,19 +207,19 @@
                 #search > form a {
                     width: 68px;
                     height: 100%;
-                    padding: 17px;
-                    margin-right: 12px;
                 }
                 #search > form svg {
                     width: 24px;
                     height: 24px;
                 }
                 #search-svg {
-                    display: inline-block;
+                    display: inline-flex;
                     width: 68px;
                     margin-right: 12px;
                     height: 100%;
                     padding-left: 10px;
+                    justify-content: center;
+                    align-items: center;
                 }
                 #search-svg svg {
                     width: 24px;
@@ -235,7 +236,8 @@
                     outline: none;
                 }
                 #search-right {
-                    display: inline-block;
+                    display: flex;
+                    justify-content: flex-end;
                 }
                 #search-keyboard::before {
                     content: "";
