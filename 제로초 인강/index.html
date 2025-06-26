@@ -525,6 +525,35 @@
                     flex: 1;
                     padding: 18px 20px;
                 }
+                #main-newstand-top .dot::before {
+                    content:'';
+                    display: inline-block;
+                    width: 4px;
+                    height: 4px;
+                    background-color: #d3d5d7;
+                    margin: 9px 7px 0;
+                    border-radius: 50%;
+                    vertical-align: 5px;
+                }
+                #main-newstand-top .slash, #main-newstand-top .dot {
+                    color: rgba(8,8,8,.5);
+                    font-weight: 800;
+                }
+                #main-newstand-top .slash {
+                    position: relative;
+                    padding-left: 26px;
+                }
+                #main-newstand-top .slash::before {
+                    content:'';
+                    display: inline-block;
+                    position: absolute;
+                    top: 4px;
+                    left: 13px;
+                    width: 1px;
+                    height: 15px;
+                    background-color: #d3d5d7;
+                    transform: skewX(-15deg);
+                }
                 #main-newstand header {
                     font-size: 1.6rem;
                     color: rgba(8,8,8,.5);
@@ -544,6 +573,26 @@
                     padding: 12px 20px;
                     background-color: var(--color_option_bg);
                     border-radius: 4px;
+                    font-size: 1.4rem;
+                    line-height: 26px;
+                }
+                #main-newstand-gray .left {
+                    flex: 1;
+                    display: flex;
+                }
+                #main-newstand-gray .left a:first-of-type::after {
+                    background-image: url('./sp_main.png');
+                    background-size: 463px 442px;
+                    background-position: -453px -436px;
+                    background-repeat: no-repeat;
+                    width: 9px;
+                    height: 6px;
+                    display: inline-block;
+                    margin: 10px 0 0 5px;
+                    vertical-align: top;
+                }
+                #main-newstand-gray .right {
+
                 }
                 #main-newstand a {
                     text-decoration: none;
@@ -660,18 +709,18 @@
                         <div id="main-newstand-top">
                             <header>
                                 <a href="#" class="bold">뉴스스탠드</a>
-                                <a href="#">언론사편집</a>
-                                <a href="#">엔터</a>
-                                <a href="#">스포츠</a>
-                                <a href="#">경제</a>
+                                <a href="#" class="dot">언론사편집</a>
+                                <a href="#" class="slash">엔터</a>
+                                <a href="#" class="slash">스포츠</a>
+                                <a href="#" class="slash">경제</a>
                             </header>
                             <div id="main-newstand-gray">
-                                <div>
+                                <div class="left">
                                     <a href="#">전체언론사</a>
                                     <a href="#">연합뉴스</a>
                                     <a href="#">뉴스 제목</a>
                                 </div>
-                                <div>
+                                <div class="right">
                                     <a href="#">뉴스스탠드</a>
                                     <a href="#">뉴스홈</a>
                                 </div>
