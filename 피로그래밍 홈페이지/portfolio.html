@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        padding: 0;
+        margin:0;
+        background-color: black;
+    }
+    #wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #wrap-center {
+        width: 90vw;
+    }
+    header {
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+    }
+    #top-section {
+        height: 40px;
+        margin: 0 0 12px;
+    }
+    #image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .project-container {
+        margin: 0 0 16px;
+        padding: 16px;
+        background-color: #333;
+        border-radius: 10px;
+        display: flex;
+    }
+    .project-pic {
+        width: 150px;
+        height: 110px;
+        background-color: white;
+        border-radius: 6px;
+        margin: 0 12px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .image1 {
+        width: 150px;
+        height: 102.5px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    .image2 {
+        width: 150px;
+        height: 53.86px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    .image3 {
+        width: 150px;
+        height: 215.55px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    .image4 {
+        width: 150px;
+        height: 72.7px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    .image5 {
+        width: 150px;
+        height: 86.3px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    .image6 {
+        width: 150px;
+        height: 130px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    .content-container {
+        width: 396.89px;
+        height: 110px;
+        display: flex;
+        flex-direction: column;
+    }
+    .name {
+        font-size: 22px;
+        font-weight: 650;
+        color: white;
+    }
+    .explain {
+        font-size: 16px;
+        color: #c6c6c6;
+        margin: 3px 0 14px 0;
+    }
+    .people {
+        display: flex;
+    }
+    .people1 {
+        width: 40px;
+        height: 22px;
+        color: white;
+        background-color: #2188b6;
+        padding: 3px 8px;
+        margin: 5px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+    .people2 {
+        width: 40px;
+        height: 22px;
+        color: black;
+        background-color: #ececec77;
+        padding: 3px 8px;
+        margin: 5px;
+        font-size: 14px;
+        border-radius: 5px;
+    }
+    @media (max-width: 650px) {
+        .project-container {
+            height: 335px;
+            margin: 0 0 16px;
+            padding: 16px;
+            background-color: #333;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .project-pic {
+            width: 250px;
+            height: 160px;
+            background-color: white;
+            border-radius: 6px;
+            margin: 0 12px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .content-container {
+            width: 396.89px;
+            height: 110px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    .image1 {
+        width: 250px;
+        height: 177.5px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    .image2 {
+        width: 250px;
+        height: 84.65px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    .image3 {
+        width: 250px;
+        height: 393.33px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    .image4 {
+        width: 250px;
+        height: 120.61px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    .image5 {
+        width: 250px;
+        height: 146.57px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    .image6 {
+        width: 250px;
+        height: 230px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    }
+</style>
+<body>
+    <div id="wrap">
+        <div id="wrap-center">
+            <header>
+                <div id="image-container">
+                    <img src="https://piro-homepage-bucket.s3.ap-northeast-2.amazonaws.com/images/icons/logo.svg" alt="logo">
+                </div>
+                <div id="text-container">
+                    <div class="text1">Home</div>
+                    <div class="text1">About Us</div>
+                    <div class="text2">Portfolio</div>
+                    <div class="text1">Interview</div>
+                    <div class="text1">Gallery</div>
+                    <div class="text1">Recruit</div>
+                </div>
+            </header>
+            <main>
+                <div id="top-section">
+
+                </div>
+                <div class="project-container">
+                    <div class="project-pic">
+                        <img src="https://piro-homepage-bucket.s3.ap-northeast-2.amazonaws.com/portfolio/20250404/%EB%A9%94%EC%9D%B8%EC%82%AC%EC%A7%84_-_dao_hong.png" alt="project logo" class="image1">
+                    </div>
+                    <div class="content-container">
+                        <div class="name">Codynow</div>
+                        <div class="explain">스타일에 대한 고민을 덜어주는 AI 코디네이터, Codynow</div>
+                        <div class="people">
+                            <div class="people1">홍다오</div>
+                            <div class="people2">박서정</div>
+                            <div class="people2">최준혁</div>
+                            <div class="people2">김예원</div>
+                            <div class="people2">김은경</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-container">
+                    <div class="project-pic">
+                        <img src="https://piro-homepage-bucket.s3.ap-northeast-2.amazonaws.com/portfolio/20250404/%EA%B1%B8%EC%9D%8C%EA%B1%B8%EC%9D%B41_-_%EA%B0%B1_%EB%98%90%EB%8A%94_%EB%AF%BC%EC%9D%B4.png" alt="project logo" class="image2">
+                    </div>
+                    <div class="content-container">
+                        <div class="name">걸음걸이</div>
+                        <div class="explain">멈추지 않을 당신의 걸음을 위한 맞춤형 서비스</div>
+                        <div class="people">
+                            <div class="people1">남경민</div>
+                            <div class="people2">김규일</div>
+                            <div class="people2">김선주</div>
+                            <div class="people2">박건욱</div>
+                            <div class="people2">이주원</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-container">
+                    <div class="project-pic">
+                        <img src="https://piro-homepage-bucket.s3.ap-northeast-2.amazonaws.com/portfolio/20250404/%EC%A7%80%EC%84%B1Park_%EB%A1%9C%EA%B3%A0_-_%EC%A0%95%EC%9B%90%EC%A4%80.png" alt="project logo" class="image3">
+                    </div>
+                    <div class="content-container">
+                        <div class="name">Codynow</div>
+                        <div class="explain">스타일에 대한 고민을 덜어주는 AI 코디네이터, Codynow</div>
+                        <div class="people">
+                            <div class="people1">홍다오</div>
+                            <div class="people2">박서정</div>
+                            <div class="people2">최준혁</div>
+                            <div class="people2">김예원</div>
+                            <div class="people2">김은경</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-container">
+                    <div class="project-pic">
+                        <img src="https://piro-homepage-bucket.s3.ap-northeast-2.amazonaws.com/portfolio/20250404/%EB%A9%94%EC%9D%B8%ED%8E%98%EC%9D%B4%EC%A7%80_-_%EB%82%98_%EB%AF%BC%EC%84%A4%EC%95%84_23_3138.png" alt="project logo" class="image4">
+                    </div>
+                    <div class="content-container">
+                        <div class="name">Codynow</div>
+                        <div class="explain">스타일에 대한 고민을 덜어주는 AI 코디네이터, Codynow</div>
+                        <div class="people">
+                            <div class="people1">홍다오</div>
+                            <div class="people2">박서정</div>
+                            <div class="people2">최준혁</div>
+                            <div class="people2">김예원</div>
+                            <div class="people2">김은경</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-container">
+                    <div class="project-pic">
+                        <img src="https://piro-homepage-bucket.s3.ap-northeast-2.amazonaws.com/portfolio/20250404/pictory_%EB%A1%9C%EA%B3%A0_-_%EB%B0%95%EC%88%98%EC%97%B0.png" alt="project logo" class="image5">
+                    </div>
+                    <div class="content-container">
+                        <div class="name">Codynow</div>
+                        <div class="explain">스타일에 대한 고민을 덜어주는 AI 코디네이터, Codynow</div>
+                        <div class="people">
+                            <div class="people1">홍다오</div>
+                            <div class="people2">박서정</div>
+                            <div class="people2">최준혁</div>
+                            <div class="people2">김예원</div>
+                            <div class="people2">김은경</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-container">
+                    <div class="project-pic">
+                        <img src="https://piro-homepage-bucket.s3.ap-northeast-2.amazonaws.com/portfolio/20250404/%EC%98%A8%EA%B8%B0%EB%A1%9D_-_%EB%B0%95%ED%98%9C%EB%A6%B0.png" alt="project logo" class="image6">
+                    </div>
+                    <div class="content-container">
+                        <div class="name">Codynow</div>
+                        <div class="explain">스타일에 대한 고민을 덜어주는 AI 코디네이터, Codynow</div>
+                        <div class="people">
+                            <div class="people1">홍다오</div>
+                            <div class="people2">박서정</div>
+                            <div class="people2">최준혁</div>
+                            <div class="people2">김예원</div>
+                            <div class="people2">김은경</div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
