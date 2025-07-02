@@ -1,83 +1,64 @@
+// 중복되지 않는 0 ~ 9 사이의 랜덤한 숫자 3개가 정해진다.
+// 화면에 보이는 칸에 각각 숫자를 넣으면서 순서가 올바른 숫자 3개를 찾는다.
+
+// 숫자는 맞지만 위치가 틀리다 -> 볼
+// 숫자와 위치가 전부 맞다 -> 스트라이크
+
+let attempts = 9;
 let answer = [];
-let triesLeft = 9;
 
-function initGame() {
-  answer = [];
-  while (answer.length < 3) {
-    const num = Math.floor(Math.random() * 10);
-    if (!answer.includes(num)) answer.push(num);
-  }
+const inputs = document.querySelectorAll('.input-field');
+const btn = document.querySelector('.submit-button');
+const resDiv = document.getElementById('results');
+const img = document.getElementById('game-result-img');
+const atmp = document.getElementById('attempts');
 
-  triesLeft = 9;
+function resetGame() {
+    tries = 9;
 
-  const inputs = document.querySelectorAll('.input-field');
-  inputs.forEach(input => input.value = '');
+    // 중복되지 않는 3개의 랜덤한 숫자 설정
+    answer = [];
+    while (answer.length < 3) {
+        const num = Math.floor(Math.random()*10);
+        if (!answer.includes(num)) 
+            answer.push(num);
+    }
 
-  const resultsDiv = document.getElementById('results');
-  if (resultsDiv) resultsDiv.innerHTML = '';
-
-  const img = document.getElementById('game-result-img');
-  if (img) img.src = '';
-
-  const btn = document.querySelector('.submit-button');
-  if (btn) btn.disabled = false;
-
-  const attemptsSpan = document.getElementById('attempts');
-  if (attemptsSpan) attemptsSpan.innerText = triesLeft;
+    // html의 input과 결과창의 내용 비운다
+    inputs.forEach(i => i.value='');
+    resDiv.innerHTML = '';
+    img.src = '';
+    atmp.textContent = attempts;
+    btn.disabled = false;
 }
-
-window.addEventListener('DOMContentLoaded', initGame);
 
 function check_numbers() {
-  const inputs = document.querySelectorAll('.input-field');
-  const guess = [];
-
-  for (const input of inputs) {
-    if (!input.value) {
-      inputs.forEach(i => i.value = '');
-      return;
+    const guess = [...inputs].map(i => +i.value);
+    if (guess.some(x => isNaN(x))) {
+        inputs.forEach(i => i.value = '');
+        return;
     }
-    const val = Number(input.value);
-    if (isNaN(val) || val < 0 || val > 9) {
-      inputs.forEach(i => i.value = '');
-      return;
-    }
-    guess.push(val);
-  }
 
-  triesLeft--;
-  const attemptsSpan = document.getElementById('attempts');
-  if (attemptsSpan) attemptsSpan.innerText = triesLeft;
+    attempts--;
+    atmp.textContent = attempts;
 
-  let strikes = 0;
-  let balls = 0;
-  for (let i = 0; i < 3; i++) {
-    if (guess[i] === answer[i]) {
-      strikes++;
-    } else if (answer.includes(guess[i])) {
-      balls++;
-    }
-  }
+    let s = 0, b = 0;
+    guess.forEach((v, i) => v === answer[i] ? s++ : (answer.includes(v) && b++));
 
-  const resultsDiv = document.getElementById('results');
-  if (!resultsDiv) return;
-  const p = document.createElement('p');
-  if (strikes === 0 && balls === 0) {
-    p.innerText = 'O';
-  } else {
-    p.innerText = `${strikes}S ${balls}B`;
-  }
-  resultsDiv.appendChild(p);
+    const p = document.createElement('p');
+    p.textContent = s || b ? `${s}S ${b}B` : 'O';
+    resDiv.appendChild(p);
 
-  inputs.forEach(i => i.value = '');
+    inputs.forEach(i => i.value='');
 
-  const img = document.getElementById('game-result-img');
-  const btn = document.querySelector('.submit-button');
-  if (strikes === 3) {
-    if (img) img.src = 'success.png';
-    if (btn) btn.disabled = true;
-  } else if (triesLeft <= 0) {
-    if (img) img.src = 'fail.png';
-    if (btn) btn.disabled = true;
+  if (s === 3) {
+    img.src = 'success.png'; btn.disabled = true;
+  } else if (attempts === 0) {
+    img.src = 'fail.png';    btn.disabled = true;
   }
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  resetGame();
+  btn.addEventListener('click', check);
+});
