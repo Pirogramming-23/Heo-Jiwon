@@ -1,4 +1,4 @@
-def Game():
+def brGame():
     num = 0
     player = 'A'
 
@@ -32,7 +32,7 @@ def Game():
                     return 'B'
             player = 'A'
 
-winner = Game()
+winner = brGame()
 if winner == 'A':
     print('playerB win!')
 else:
