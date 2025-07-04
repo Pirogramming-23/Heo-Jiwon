@@ -10,6 +10,10 @@
 <body>
     <div id="main">
         <h1>피로그래밍 스톱워치</h1>
+        <div id="mode-switch">
+            <button id="stopwatch">스톱워치</button>
+            <button id="timer">타이머</button>
+        </div>
         <div id="time-section">
             <p>
                 <span id="seconds">00</span>:<span id="tenmill">00</span>
@@ -20,8 +24,14 @@
                 <button id="reset-button">reset</button>
             </div>
         </div>
-        <div>
-            <div></div>
+        <div id="record-section">
+            <h2>
+                <button id="click-all"></button>
+                <span>구간 기록</span>
+                <button id="delete-selected">삭제하기</button>
+                <button id="clear-records">전체 삭제</button>
+            </h2>
+            <ul id="record-list"></ul>
             <div></div>
         </div>
     </div>
