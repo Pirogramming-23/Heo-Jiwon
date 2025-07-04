@@ -12,3 +12,7 @@ while (True):
         print(e)
     else:
         break
+
+for _ in range(n):
+    i = i + 1
+    print(f'playerA: {num}')
