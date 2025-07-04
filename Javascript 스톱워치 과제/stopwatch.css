@@ -1,0 +1,60 @@
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100dvw;
+    height: 100dvh;
+    gap: 1rem;
+}
+
+#main > h1 {
+    font-size: 3rem;
+}
+
+#time-section {
+    width: 40rem;
+    background-color: rgb(93, 137, 44);
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#time-section > p {
+    border-radius: 3rem;
+    margin-top: 2rem;
+    padding: 0.5rem 4rem;
+    background-color: white;
+    font-size: 5rem;
+}
+
+#button {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+#start-button {
+    background-color: white;
+    border: none;
+    border-radius: 1rem;
+    width: 3rem;
+    height: 3rem;
+}
+#stop-button {
+    background-color: white;
+    border: none;
+    border-radius: 1rem;
+    width: 3rem;
+    height: 3rem;
+}
+#reset-button {
+    background-color: white;
+    border: none;
+    border-radius: 1rem;
+    width: 3rem;
+    height: 3rem;
+}
