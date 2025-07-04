@@ -18,18 +18,22 @@ def Game():
         if player == 'A':
             for _ in range(n):
                 num = num + 1
-                if num == 31:
-                    return('A')
                 print(f'playerA: {num}')
+                if num == 31:
+                    return 'A'
             player = 'B'
             continue
 
         if player == 'B':
             for _ in range(n):
                 num = num + 1
-                if num == 31:
-                    return('B')
                 print(f'playerB: {num}')
+                if num == 31:
+                    return 'B'
             player = 'A'
 
-Game()
+winner = Game()
+if winner == 'A':
+    print('playerB win!')
+else:
+    print('playerA win!')
