@@ -1,0 +1,124 @@
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100dvw;
+    height: 100dvh;
+    gap: 1rem;
+}
+
+#main > h1 {
+    font-size: 3rem;
+}
+
+#time-section {
+    width: 40rem;
+    background-color: rgb(93, 137, 44);
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#time-section > p {
+    border-radius: 3rem;
+    margin-top: 2rem;
+    padding: 0.5rem 4rem;
+    background-color: white;
+    font-size: 5rem;
+}
+
+#button {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+#start-button {
+    background-color: white;
+    border: none;
+    border-radius: 1rem;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+#stop-button {
+    background-color: white;
+    border: none;
+    border-radius: 1rem;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+#reset-button {
+    background-color: white;
+    border: none;
+    border-radius: 1rem;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+
+#record-section {
+    width: 45rem;
+    height: 50%;
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#record-section > h2 {
+    width: 45rem;
+    height: 3rem;
+    background-color: rgb(93, 137, 44);
+    border-radius: 2rem 2rem 0 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10rem;
+}
+
+#click-all {
+    border: 3px solid black;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#record-list {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+#record-list li {
+    width: 45rem;
+    height: 3rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    gap: 10rem;    
+}
+
+.click {
+    border: 3px solid black;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 2.5rem;
+}
+.click.selected {
+    background-color: brown;
+}
+
+#record-list li span {
+    font-size: 1rem;
+    margin-left: 5.3rem;
+    font-size: 1.5rem;
+}
