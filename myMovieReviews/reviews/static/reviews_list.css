@@ -2,7 +2,6 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
     padding: 40px;
-
 }
 
 #container {
@@ -18,26 +17,27 @@ body {
     padding: 0 50px;
 }
 
-.post {
-    background-color: #fff;
+#main {
+    display: flex;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 20rem;
+    margin: 50px;
+    background-color: rgb(204, 202, 202);
     border-radius: 12px;
     padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.post:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-}
-
-.label {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.movie-img {
+    width: 10rem;
+    height: 10rem;
 }
 
 .title {
@@ -47,9 +47,13 @@ body {
     color: #333;
 }
 
-.content {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-    white-space: pre-wrap;
+.year-label, .genre-label, .rating-label {
+    color: gray;
+    width: 4rem;
+    height: 2rem;
 }
+
+.year, .genre, .rating {
+    display: flex;
+}
+
