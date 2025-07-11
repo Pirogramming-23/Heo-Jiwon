@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰 작성하기</title>
+</head>
+<body>
+    <form action="/reviews/create/" method="post">
+    {% csrf_token %}
+        <div>
+            <span>제목: </span>
+            <input name="title" placeholder="" />
+        </div>
+        <div>
+            <span>개봉년도: </span>
+            <input name="year" placeholder="" />
+        </div>
+        <div>
+            <span>장르: </span>
+            <input name="genre" placeholder="" />
+        </div>
+        <div>
+            <span>별점: </span>
+            <input name="rating" placeholder="" />
+        </div>
+        <div>
+            <span>러닝타임: </span>
+            <input name="running_time" placeholder="" />
+        </div>
+        <div id="review-box">
+            <span>리뷰: </span>
+            <textarea name="content" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <span>감독: </span>
+            <input name="director" placeholder="" />
+        </div>
+        <div>
+            <span>배우: </span>
+            <input name="actors" placeholder="" />
+        </div>
+        <div>
+            <input type="submit" value="저장">
+        </div>
+    </form>    
+</body>
+</html>

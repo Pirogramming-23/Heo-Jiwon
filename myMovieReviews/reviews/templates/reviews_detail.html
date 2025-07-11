@@ -20,7 +20,11 @@
                 <div id="title">{{review.title}}</div>
                 <div id="header-button">
                     <a href="/reviews/{{ review.id }}/update/" class="edit-link">✏️ 수정</a>
-                    <a href="/reviews/{{ review.id }}/delete/" class="delete-link">🗑 삭제</a>
+                    {% csrf_token %}
+                    <form method="post" action="/reviews/{{review.id}}/delete/" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="delete-link" style="border: none; cursor: pointer;">삭제</button>
+                    </form>
                 </div>
             </div>
             <div id="main-center">

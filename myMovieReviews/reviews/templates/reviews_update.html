@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰 수정하기</title>
+</head>
+<body>
+    <form action="/reviews/{{review.id}}/update/" method="post">
+    {% csrf_token %}
+        <div>
+            <span>제목: </span>
+            <input name="title" value="{{review.title}}" />
+        </div>
+        <div>
+            <span>개봉년도: </span>
+            <input name="year" value="{{review.year}}" />
+        </div>
+        <div>
+            <span>장르: </span>
+            <input name="genre" value="{{review.genre}}" />
+        </div>
+        <div>
+            <span>별점: </span>
+            <input name="rating" value="{{review.rating}}" />
+        </div>
+        <div>
+            <span>러닝타임: </span>
+            <input name="running_time" value="{{review.running_time}}" />
+        </div>
+        <div id="review-box">
+            <span>리뷰: </span>
+            <textarea name="content" cols="30" rows="10">{{review.content}}</textarea>
+        </div>
+        <div>
+            <span>감독: </span>
+            <input name="director" value="{{review.director}}" />
+        </div>
+        <div>
+            <span>배우: </span>
+            <input name="actors" value="{{review.actors}}" />
+        </div>
+        <div>
+            <input type="submit" value="수정 완료">
+        </div>
+    </form>    
+</body>
+</html>
