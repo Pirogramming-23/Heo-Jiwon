@@ -14,11 +14,12 @@
             <a href="">my<span>Movie</span>reviews</a>
             <a href="">Add a New review</a>
         </div>
+        <hr>
         <div id="main">
         {% for review in reviews %}
                 <div class="review">
                     <img class="movie-img">
-                    <a href="" style="text-decoration: none;">
+                    <a href="/reviews/{{review.id}}" style="text-decoration: none;">
                         <div class="title">{{ review.title }}</div>
                     </a>
                     <div class="year">
