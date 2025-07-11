@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie reviews</title>
+    <link href="{% static 'reviews_list.css' %}" rel="stylesheet">
+    <link href="{% static 'reset.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <a href="">my<span>Movie</span>reviews</a>
+            <a href="">Add a New review</a>
+        </div>
+
+        {% for review in reviews %}
+            <a href="/posts/{{ post.id }}" style="text-decoration: none;">
+                <div class="post">
+                    <div class="label">제목</div>
+                    <div class="title">{{ post.title }}</div>
+        
+                    <div class="label">작성자</div>
+                    <div class="content">{{ post.user }}</div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</body>
+</html>
