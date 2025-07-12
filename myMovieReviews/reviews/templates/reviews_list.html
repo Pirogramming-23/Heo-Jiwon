@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie reviews</title>
+    <link href="{% static 'reviews_list.css' %}" rel="stylesheet">
+    <link href="{% static 'reset.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <a href="">my<span>Movie</span>reviews</a>
+            <a href="/reviews/create/">Add a New review</a>
+        </div>
+        <hr>
+        <div id="main">
+        {% for review in reviews %}
+                <div class="review">
+                    <img class="movie-img">
+                    <a href="/reviews/{{review.id}}" style="text-decoration: none;">
+                        <div class="title">{{ review.title }}</div>
+                    </a>
+                    <div class="year">
+                        <div class="year-label">개봉년도</div>
+                        <div>{{review.year}}</div>
+                    </div>
+                    <div class="genre">
+                        <div class="genre-label">장르</div>
+                        <div>{{review.genre}}</div>
+                    </div>
+                    <div class="rating">
+                        <div class="rating-label">장르</div>
+                        <div>{{review.rating}}</div>
+                    </div>
+                </div>
+        {% endfor %}            
+        </div>
+    </div>
+</body>
+</html>

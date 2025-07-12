@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ review.title }} - 리뷰 상세</title>
+    <link href="{% static 'reviews_detail.css' %}" rel="stylesheet">
+    <link href="{% static 'reset.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <a href="/reviews/">my<span>Movie</span>reviews</a>
+            <a href="">Add a New review</a>
+        </div>
+        <hr>
+        <main>
+            <div id="main-header">
+                <div id="title">{{review.title}}</div>
+                <div id="header-button">
+                    <a href="/reviews/{{ review.id }}/update/" class="edit-link">✏️ 수정</a>
+                    {% csrf_token %}
+                    <form method="post" action="/reviews/{{review.id}}/delete/" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="delete-link" style="border: none; cursor: pointer;">삭제</button>
+                    </form>
+                </div>
+            </div>
+            <div id="main-center">
+                <img class="movie-img">
+                <div id="contents">
+                    <div>
+                        <div class="label">개봉년도</div>
+                        <div>{{ review.year }}</div> 
+                    </div>
+                    <div>
+                        <div class="label">감독</div>
+                        <div>{{review.director}}</div>
+                    </div>
+                    <div>
+                        <div class="label">주연</div>
+                        <div>{{review.actors}}</div>
+                    </div>
+                    <div>
+                        <div class="label">장르</div>
+                        <div>{{review.genre}}</div>
+                    </div>
+                    <div>
+                        <div class="label">별점</div>
+                        <div>{{review.rating}}</div>
+                    </div>
+                    <div>
+                        <div class="label">러닝타임</div>
+                        <div>{{review.running_time}}</div>
+                    </div>
+                </div>
+            </div>
+            <div id="main-bottom">
+                {{review.content}}
+            </div>
+        </main>
+    </div>
+</body>
+</html>

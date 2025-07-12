@@ -1,0 +1,65 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    padding: 40px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 50px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 5px 0;
+}
+
+#main {
+    display: flex;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+    height: 20rem;
+    margin: 50px;
+    background-color: rgb(204, 202, 202);
+    border-radius: 12px;
+    padding: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.movie-img {
+    width: 10rem;
+    height: 10rem;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.year-label, .genre-label, .rating-label {
+    color: gray;
+    width: 4rem;
+    height: 2rem;
+}
+
+.year, .genre, .rating {
+    display: flex;
+}
+
