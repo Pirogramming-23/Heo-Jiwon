@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie reviews</title>
+    <link href="{% static 'ideas/ideas_list.css' %}" rel="stylesheet">
+    <link href="{% static 'reset.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <a href="">my SW Idea Manage</a>
+            <a href="">아이디어 등록</a>
+            <a href="">아이디어 관리</a>
+            <a href="">개발툴 등록</a>
+            <a href="">개발툴 관리</a>
+        </div>
+        <div id="main">
+            <div id="main-top">
+                <div>Idea List</div>
+            </div>
+            <div id="items">
+        {% for idea in ideas %}
+                <div class="idea">
+                    {% if idea.photo %}
+                    <img src="{{ idea.photo.url }}" alt="업로드 이미지" style="max-width: 100px; height: auto;"/>
+                    {% else %}
+                    <img src="{% static 'ideas/image/no-image.jpg' %}" alt="기본 이미지" style="max-width: 100px; height: auto;"/>
+                    {% endif %}
+                    <a href="/ideas/{{idea.id}}" style="text-decoration: none;">
+                        <div class="title">{{ idea.title }}</div>
+                    </a>
+                    <div class="devtool">
+                        예상 개발툴: {{ idea.devtool }}
+                    </div>
+                    <div class="interest">
+                        아이디어 관심도: 
+                    </div>
+                </div>
+        {% endfor %}     
+            </div>       
+        </div>
+    </div>
+</body>
+</html>
