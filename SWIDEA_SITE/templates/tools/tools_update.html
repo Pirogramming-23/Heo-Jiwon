@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie reviews</title>
+    <link href="{% static 'tools/css/tools_create.css' %}" rel="stylesheet">
+    <link href="{% static 'reset.css' %}" rel="stylesheet">
+</head>
+    <body>
+    <div id="container">
+        <div id="header">
+            <a href="">my SW Idea Manage</a>
+            <a href="/ideas/create">아이디어 등록</a>
+            <a href="">아이디어 관리</a>
+            <a href="">개발툴 등록</a>
+            <a href="">개발툴 관리</a>
+        </div>
+        <div id="main">
+            <div id="main-top">
+                <div>DevTool Register</div>
+            </div>
+            <div id="main-create">
+                <form action="/tools/{{ tool.id }}/update/" method='post'>
+                    {% csrf_token %}
+                    <div>
+                       <span>이름: </span>
+                       <input name="name" value="{{tool.name}}">
+                    </div>
+                    <div>
+                       <span>종류: </span>
+                       <input name="kind" value="{{tool.kind}}">
+                    </div>
+                    <div>
+                       <span>개발툴 설명: </span>
+                       <input name="content" value="{{tool.content}}"> 
+                    </div>
+                    <div>
+                        <input type="submit" value="저장">
+                    </div>
+                </form>
+            </div>       
+        </div>
+    </div>
+</body>
+</html>

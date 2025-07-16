@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie reviews</title>
+    <link href="{% static 'tools/css/tools_detail.css' %}" rel="stylesheet">
+    <link href="{% static 'reset.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <a href="">my SW Idea Manage</a>
+            <a href="/ideas/create">아이디어 등록</a>
+            <a href="">아이디어 관리</a>
+            <a href="">개발툴 등록</a>
+            <a href="">개발툴 관리</a>
+        </div>
+        <div id="main">
+            <div id="main-top">
+                <div>DevTool Detail</div>
+            </div>
+            <div id="main-center">
+                <div>{{tool.name}}</div>
+                <div>{{tool.kind}}</div>
+                <div>{{tool.content}}</div>
+
+                <div>
+                    <span>만들 수 있는 SW 목록</span>
+                    <ul>
+                    {% for idea in ideas %}
+                        <li>
+                            <a href="{% url 'ideas:detail' idea.pk %}">
+                            {{ idea.title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div id="main-bottom">
+                {% csrf_token %}
+                <form method="post" action="/tools/{{tool.id}}/delete/">
+                    {% csrf_token %}
+                    <button type="submit" class="delete-link" style="border: none; cursor: pointer;">삭제</button>
+                </form>
+                <a href="/tools/">목록</a>
+                <a href="/tools/{{tool.id}}/update/">수정</a>
+            </div>  
+        </div>
+    </div>
+</body>
+</html>
