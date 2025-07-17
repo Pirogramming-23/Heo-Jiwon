@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie reviews</title>
+    <link href="{% static 'tools/css/tools_list.css' %}" rel="stylesheet">
+    <link href="{% static 'reset.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <a href="">my SW Idea Manage</a>
+            <a href="/ideas/create">아이디어 등록</a>
+            <a href="">아이디어 관리</a>
+            <a href="">개발툴 등록</a>
+            <a href="">개발툴 관리</a>
+        </div>
+        <div id="main">
+            <div id="main-top">
+                <div>DevTool List</div>
+            </div>
+            <div id="items">
+        {% for tool in tools %}
+                <div class="tool">
+
+                    <a href="/tools/{{tool.id}}" style="text-decoration: none;">
+                        <div class="name">{{ tool.name }}</div>
+                    </a>
+                    <div class="kind">
+                        {{ tool.kind }}
+                    </div>
+                    <div class="content">
+                        {{tool.content}}
+                    </div>
+                </div>
+        {% endfor %}     
+            </div>       
+        </div>
+    </div>
+</body>
+</html>

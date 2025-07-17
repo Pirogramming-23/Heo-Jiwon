@@ -1,0 +1,50 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(173, 135, 208);
+    height: 6rem;
+    width: 100%;
+}
+
+#main {
+    margin-top: 3rem;
+    background-color: rgb(190, 185, 185);
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-top > div {
+    font-size: 25px;
+}
+
+#items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tool {
+    background-color: rgb(244, 178, 178);
+    width: 70rem;
+    height: 5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    margin: 10px;
+}

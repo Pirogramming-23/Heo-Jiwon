@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Movie reviews</title>
+    <link href="{% static 'ideas/css/ideas_list.css' %}" rel="stylesheet">
+    <link href="{% static 'reset.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <a href="">my SW Idea Manage</a>
+            <a href="/ideas/create">아이디어 등록</a>
+            <a href="">아이디어 관리</a>
+            <a href="/tools/create">개발툴 등록</a>
+            <a href="">개발툴 관리</a>
+        </div>
+        <div id="main">
+            <div id="main-top">
+                <div>Idea List</div>
+                <div>
+                    <select onchange="location.href=this.value">
+                        <option disabled selected>--정렬기준--</option>
+                        <option value="?sort=찜하기순">찜하기순</option>
+                        <option value="?sort=등록순">등록순</option>
+                        <option value="?sort=최신순">최신순</option>
+                        <option value="?sort=이름순">이름순</option>
+                    </select>
+                </div>
+            </div>
+            <div id="items">
+        {% for idea in ideas %}
+                <div class="idea">
+                    <div class="photo-wrapper">
+                    <form method="post" action="{% url 'ideas:toggle_star' idea.id %}">
+                        {% csrf_token %}
+                        {% if idea.id in starred_idea_ids %}
+                            <button type="submit" class="star-button">⭐</button>
+                        {% else %}
+                            <button type="submit" class="star-button">☆</button>
+                        {% endif %}  
+                    </form>
+                        {% if idea.photo %}
+                        <img src="{{ idea.photo.url }}" alt="업로드 이미지" style="max-width: 150px; height: auto;" class="idea-photo"/>
+                        {% else %}
+                        <img src="{% static 'ideas/image/no-image.jpg' %}" alt="기본 이미지" style="max-width: 150px; height: auto;" class="idea-photo"/>
+                        {% endif %}                        
+                    </div>
+
+                    <a href="/ideas/{{idea.id}}" style="text-decoration: none;">
+                        <div class="title">{{ idea.title }}</div>
+                    </a>
+                    <div class="devtool">
+                        예상 개발툴: {{ idea.devtool }}
+                    </div>
+                    <div class="interest">
+                        <span>아이디어 관심도</span>
+                        <div class="interest-control" data-id="{{ idea.id }}">
+                            <button class="interest-btn minus" aria-label="관심도 줄이기">－</button>
+                            <span class="interest-count">{{ idea.interest }}</span>
+                            <button class="interest-btn plus"  aria-label="관심도 늘리기">＋</button>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}     
+            </div>       
+        </div>
+    </div>
+<script>
+// CSRF 토큰 꺼내는 헬퍼
+function getCookie(name) {
+  const match = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
+  return match ? match.pop() : '';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.interest-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      const container = btn.closest('.interest-control');
+      const id = container.dataset.id;
+      const action = btn.classList.contains('plus') ? 'plus' : 'minus';
+
+      fetch(`/ideas/${id}/adjust_interest/`, {
+        method: 'POST',
+        headers: {
+          'X-CSRFToken': getCookie('csrftoken'),
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `action=${action}`
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('네트워크 에러');
+        return res.json();
+      })
+      .then(data => {
+        // 받은 관심도 값으로 갱신
+        container.querySelector('.interest-count').textContent = data.interest;
+      })
+      .catch(console.error);
+    });
+  });
+});
+</script>
+
+</body>
+</html>
