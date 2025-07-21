@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pirostagram</title>
+    <link rel="stylesheet" href="{% static 'posts/css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'posts:post_list' %}">Pirostagram</a></h1>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <script>
+        // CSRF token helper
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                document.cookie.split(';').forEach(cookie => {
+                    const [key, val] = cookie.trim().split('=');
+                    if (key === name) cookieValue = decodeURIComponent(val);
+                });
+            }
+            return cookieValue;
+        }
+        const csrftoken = getCookie('csrftoken');
+    </script>
+    <script src="{% static 'posts/js/ajax.js' %}"></script>
+</body>
+</html>
