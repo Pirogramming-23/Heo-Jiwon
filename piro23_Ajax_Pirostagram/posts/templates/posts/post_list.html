@@ -3,7 +3,7 @@
 {% block content %}
 {% for post in posts %}
     <div class="post" data-post-id="{{ post.id }}">
-        <img src="{{ post.image.url }}" alt="Post Image">
+        <img src="{{ post.image.url }}" alt="Post Image" style="width: 150px; height: auto;">
         <p>{{ post.caption }}</p>
 
         <button class="like-btn">
