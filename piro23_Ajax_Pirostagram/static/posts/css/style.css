@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    margin: 0;
+}
+header {
+    background: #fff;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 10px; text-align: center;
+}
+main {
+    max-width: 600px;
+    margin: 20px auto;
+}
+.post {
+    background: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.post img {
+    width: 100%;
+    border-radius: 3px;
+}
+.like-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+}
+.like-count {
+    margin-right: 6px;
+    font-weight: bold;
+}
+.comments {
+    margin-top: 12px;
+}
+.comment {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+}
+.comment-form {
+    display: flex;
+    margin-top: 10px;
+}
+.comment-form input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+}
+.comment-form button {
+    padding: 8px 12px;
+    margin-left: 6px;
+    border: none;
+    background: #3897f0;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.delete-comment {
+    background: none;
+    border: none;
+    color: #ed4956;
+    cursor: pointer;
+}
